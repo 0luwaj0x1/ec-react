@@ -11,7 +11,7 @@ import Home from "./Home";
 function App() {
   return (
     <div className="container">
-      <Router>
+      <Router basename={`${process.env.PUBLIC_URL}/`}>
         <div className="sidebar">
           <Sidebar />
         </div>
