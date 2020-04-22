@@ -98,5 +98,43 @@ body {
 }
 .country-details li {
   list-style-type: none;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
+
+.countries {
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: dense;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3rem;
+}
+.countries-item {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+ .active {
+   background-color: mediumslateblue;
+   color: #fff !important;
+   padding: 1rem;
+   border-radius: 3px;
+ }
+ .btn-spin {
+   width: 40%;
+ }
+ .btn-group {
+   width: 60%;
+   display: flex;
+   justify-content: space-between;
+ }
+ .spin-container {
+   height: 30rem;
+   margin: 4rem 0;
+   text-align: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+

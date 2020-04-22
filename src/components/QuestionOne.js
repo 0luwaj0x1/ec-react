@@ -2,21 +2,13 @@ import React, { Component } from "react";
 import { fetchCountry } from "../actions/countries";
 import { connect } from "react-redux";
 import { getError } from "../actions/error";
+import Input from "./Input";
 
 class QuestionOne extends Component {
-  state = {
-    search: "",
-  };
-
-  handleChange = (evt) => {
-    this.setState({
-      search: evt.target.value,
-    });
-  };
-
-  submitCountryName = () => {
+  
+  submitCountryName = (search) => {
     this.props.dispatch(getError({ message: "" }));
-    this.props.dispatch(fetchCountry(this.state.search));
+    this.props.dispatch(fetchCountry(search));
   };
 
   render() {
@@ -30,21 +22,7 @@ class QuestionOne extends Component {
 
     return (
       <div>
-        <div className="form-group">
-          <input
-            className="y-input"
-            value={this.state.search}
-            onChange={this.handleChange}
-            placeholder="Enter a country name"
-          />
-          <button
-            onClick={this.submitCountryName}
-            disabled={!this.state.search}
-            className="btn"
-          >
-            Search
-          </button>
-        </div>
+        <Input handleSubmit={this.submitCountryName} placeholder='Enter a country full name' />
 
         {error.message ? (
           <h4 style={{ color: "red" }}>{error.message}</h4>

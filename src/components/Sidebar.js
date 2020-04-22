@@ -1,24 +1,29 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <Fragment>
       <ul>
         <li>
-          <Link to="/question-one">QUESTION ONE</Link>
+          <NavLink activeClassName="active" to="/question-one">
+            QUESTION ONE
+          </NavLink>
         </li>
         <li>
-          <Link to="/question-one">QUESTION ONE</Link>
+          <NavLink activeClassName="active" to="/question-two">
+            QUESTION TWO
+          </NavLink>
         </li>
         <li>
-          <Link to="/question-one">QUESTION ONE</Link>
+          <NavLink activeClassName="active" to="/question-three">
+            QUESTION THREE
+          </NavLink>
         </li>
         <li>
-          <Link to="/question-one">QUESTION ONE</Link>
-        </li>
-        <li>
-          <Link to="/question-one">QUESTION ONE</Link>
+          <NavLink activeClassName="active" to="/question-four">
+            QUESTION FOUR
+          </NavLink>
         </li>
       </ul>
     </Fragment>
